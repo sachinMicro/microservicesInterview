@@ -1,0 +1,19 @@
+server:
+   port: 9090
+   
+spring:
+   application: 
+        name: 02-KEY-CLOAK
+   security:
+    oauth2:
+      client:
+        registration: 
+           keycloak:
+              client-id: testappkeycloak
+              client-secret: DxIeI8x1mHPVLSGOj4qyNIVFohAqWtth 
+              
+        provider:
+       
+              scope: openid,offline_access,profile
+              authorization-grant-type: authorization_code
+              issuer-uri: ht

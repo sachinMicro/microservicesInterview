@@ -1,0 +1,5 @@
+package com.interview.keycloakjwt.controller;
+
+public class HomeController {
+
+}

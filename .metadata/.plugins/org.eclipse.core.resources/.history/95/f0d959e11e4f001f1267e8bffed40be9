@@ -1,0 +1,8 @@
+spring.application.name=02-KEYCLOAK_JWT
+server.port=9090
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/realms/testrealm
+
+spring.security.oauth2.client.registration.keycloak.client-id=testappkeycloak
+spring.security.oauth2.client.registration.keycloak.client-secret=DxIeI8x1mHPVLSGOj4qyNIVFohAqWtth
+spring.security.oauth2.client.registration.keycloak.scope: openid,email

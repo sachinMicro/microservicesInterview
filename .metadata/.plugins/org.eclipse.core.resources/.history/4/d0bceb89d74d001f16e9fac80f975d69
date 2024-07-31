@@ -1,0 +1,5 @@
+package com.microservices.gateway.controller;
+
+public class LoginController {
+
+}

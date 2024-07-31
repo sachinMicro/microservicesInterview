@@ -1,0 +1,9 @@
+package com.interview.keycloakjwt.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+
+public class SecurityConfiguration {
+
+}

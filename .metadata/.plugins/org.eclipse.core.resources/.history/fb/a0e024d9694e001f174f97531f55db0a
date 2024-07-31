@@ -1,0 +1,7 @@
+package com.interview.ldapserver;
+
+
+@RestController
+public class HomeController {
+
+}

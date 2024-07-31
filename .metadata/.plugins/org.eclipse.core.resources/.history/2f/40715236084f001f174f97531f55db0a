@@ -1,0 +1,5 @@
+package com.interview.keycloak.config;
+
+public class SecurityConfig {
+
+}

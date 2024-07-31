@@ -1,0 +1,19 @@
+package com.interview.keycloak.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class IndexController {
+
+	@GetMapping(path = {"/","/home"})
+    public String home() {
+         return "Not secured"; 
+    }
+	
+    @GetMapping(path = "/secured")
+    public String index() {
+    	 return "secured"; 
+    }
+
+}

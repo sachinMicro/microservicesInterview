@@ -1,0 +1,5 @@
+package com.interview.ldapserver.confgi;
+
+public class AppConfig {
+
+}

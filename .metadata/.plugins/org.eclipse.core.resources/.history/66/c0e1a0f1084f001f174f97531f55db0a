@@ -1,0 +1,40 @@
+package com.interview.keycloak.config;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.logout;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+	@Bean
+	public SecurityWebFilterChain configure(HttpSecurity http) {
+		
+		http
+		  .authorizeHttpRequests(auth->{
+			  auth
+			    .requestMatchers("/")
+			    .permitAll()
+			    .requestMatchers("/home")
+			    .permitAll()
+			    .anyRequest()
+			    .authenticated();
+		  });
+		
+		http
+		   .logout(logout->{
+			   logout.invalidateHttpSession(true);
+			   logout.logoutUrl("http://localhost:8080/realms/testrealm/protocol/openid-connect/logout");
+			   logout.logoutSuccessUrl("/");
+		 });
+		
+		
+		return http.build();
+	}
+	
+}

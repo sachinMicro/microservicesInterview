@@ -1,0 +1,5 @@
+package com.interview.ldapserver.repos;
+
+public interface UserRepository {
+
+}

@@ -1,0 +1,17 @@
+server:
+   port: 9090
+   
+spring:
+   application: 
+        name: 02-KEY-CLOAK
+   security:
+    oauth2:
+      client:
+        provider:
+          external:
+              issuer: http://localhost:8080/realms/testrealm
+        registration: 
+           external:
+              provider: external
+              client-name: testappkeycloak
+              client-secret: DxIeI8x1mHPVLSGOj4qyNIVFohAqWtth 

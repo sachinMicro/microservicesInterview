@@ -1,0 +1,6 @@
+spring.application.name=01-LDAP-SERVER
+
+spring.ldap.urls=ldap://localhost:10389
+spring.ldap.base=o=nit
+spring.ldap.username=uid=admin,ou=system
+spring.ldap.password=secret

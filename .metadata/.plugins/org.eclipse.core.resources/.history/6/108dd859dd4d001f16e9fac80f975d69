@@ -1,0 +1,11 @@
+spring.application.name=01-API_GATEWAY
+
+
+
+
+okta.oauth2.issuer=https://dev-46634838.okta.com/oauth2/default
+okta.oauth2.audience=api://default
+okta.oauth2.client-id=0oaimniur2Cxa7itX5d7
+okta.oauth2.client-secret=rkLV9Mmm4DU6Tds2ookCfT3DLkY4faq8MbzSCrO0enIQ37x0aPTIsA4ezobvwvnl
+okta.oauth2.scopes=openid,profile,email,offline_access
+#okta.oauth2.redirect-uri=/authorization-code/callback

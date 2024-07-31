@@ -1,0 +1,9 @@
+package com.interview.ldapserver.confgi;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.ldap.repository.config.EnableLdapRepositories;
+
+@Configuration
+@EnableLdapRepositories(basePackages = "com.baeldung.ldap.**")
+public class AppConfig {
+}	

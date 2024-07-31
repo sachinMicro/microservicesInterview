@@ -1,0 +1,25 @@
+package com.interview.ldapserver.confgi;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+
+@Configuration
+@EnableMethodSecurity
+public class SecurityConfig {
+
+	
+	public AuthenticationManager configure(AuthenticationManagerBuilder auth) {
+		auth.ldapAuthentication().contextSource().url("ldap://localhost:10389/0=nit")
+		.managerDn("uid=admin,ou=system").managerPassword("secret")
+		.and()
+		.userSearchBase("ou=users").userSearchFilter("(cn={0})")
+		.groupSearchBase("ou=roles").groupRoleAttribute("cn")
+		.groupSearchFilter("(uniqueMember={0})")
+		.rolePrefix("ROLE_");
+		return auth.build();
+	}
+
+	
+ }

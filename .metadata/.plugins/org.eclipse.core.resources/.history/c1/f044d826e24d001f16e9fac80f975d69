@@ -1,0 +1,35 @@
+package com.microservices.gateway.security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.oauth2.client.oidc.web.logout.OidcClientInitiatedLogoutSuccessHandler;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+
+
+@Configuration
+@EnableWebFluxSecurity
+public class WebSecurityConfiguration {
+	
+
+    OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler() {
+        OidcClientInitiatedLogoutSuccessHandler successHandler =
+            new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
+        successHandler.setPostLogoutRedirectUri("http://localhost:8080/");
+        return successHandler;
+    }
+	
+	@Bean
+	public SecurityWebFilterChain  securityWebFilterChain(ServerHttpSecurity  http) throws Exception {
+		http.authorizeExchange(auth->{
+			auth.anyExchange().authenticated();
+		})	
+		.logout((logout) -> logout.logoutSuccessHandler(oidcLogoutSuccessHandler()))
+		.oauth2Login(Customizer.withDefaults())
+		.oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
+		return http.build();
+	}
+
+}
