@@ -20,5 +20,10 @@ public class IndexController {
 		return user;
 	}
 	
+	@GetMapping("/welcome")
+	public String welcome(){
+		return "welcome";
+	}
+	
 
 }

@@ -1,0 +1,11 @@
+server:
+   port: 8040
+   
+spring:
+    application.name: CALL_ME_SERVICE
+    security:
+     oauth2:
+       resourceserver:
+         jwt:
+          jwk-set-uri: http://localhost:8080/realms/testrealm/protocol/openid-connect/certs   
+       

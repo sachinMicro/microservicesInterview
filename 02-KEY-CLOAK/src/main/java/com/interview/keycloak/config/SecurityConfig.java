@@ -26,9 +26,6 @@ public class SecurityConfig {
 		  });
 		http
 		   .oauth2Login(Customizer.withDefaults());
-		
-		http
-		   .oauth2Login(Customizer.withDefaults());
 
 		http
 		   .logout(logout->{
