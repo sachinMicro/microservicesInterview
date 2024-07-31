@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\NATRAJ_MS\03-02-CallMeService"/>
+			<item value="D:\NATRAJ_MS\03-01-CloudGateway"/>
+			<item value="D:\NATRAJ_MS\02-KEYCLOAK_JWT"/>
 			<item value="D:\NATRAJ_MS\02-KEY-CLOAK"/>
 			<item value="D:\NATRAJ_MS\01-LDAP-SERVER"/>
 		</list>

@@ -1,6 +1,12 @@
 server:
    port: 9090
-   
+
+
+keycloak:
+    token:
+      path: http://localhost:8080/realms/testrealm/protocol/openid-connect/token
+    grant_type: password
+    
 spring:
   application.name: CLOUD_GATEWAY
   security.oauth2:
@@ -12,7 +18,7 @@ spring:
       keycloak:
         issuer-uri: http://localhost:8080/realms/testrealm
     registration:
-      spring-with-test-scope:
+      keycloak:
         provider: keycloak
         client-id: testappkeycloak
         client-secret: DxIeI8x1mHPVLSGOj4qyNIVFohAqWtth
